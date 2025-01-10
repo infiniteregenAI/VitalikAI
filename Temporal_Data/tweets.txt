@@ -516,3 +516,1296 @@
     All L2s should be working on (trustless, merkle-proof-based) CCIP resolvers, so that we can have ENS subdomains registerable, updateable and readable directly on L2s.
 
     ENS is super-important, it needs to be affordable!
+
+  * Tweet:
+    By popular demand, an updated roadmap diagram for 2023!
+
+  * Tweet:
+    VDFs have been shrunk to reflect a temporary reduced emphasis, due to cryptographic weaknesses in existing constructions:
+
+    https://ethresear.ch/t/statement
+
+    Deep crypto (eg. obfuscation) and delay
+  * Tweet:encrypted mempools have been added to reflect growing research interest in these topics.
+
+  * Tweet:
+    Big thanks to 
+    @drakefjustin
+    
+    @fradamt
+    
+    @mikeneuder
+    
+    @dankrad
+    
+    @barnabemonnot
+    
+    @asanso
+    
+    @icebearhww
+    
+    @domothy
+    
+    @gballet
+    for feedback!
+
+  * Tweet:
+    Make Ethereum cypherpunk again
+
+  * Tweet:
+    A PoS simplification proposal: make a design that only requires 8192 signatures per slot (even with SSF), making the consensus implementation considerably simpler and lighter
+
+  * Tweet:
+    By popular demand, an updated roadmap diagram for 2023!
+
+  * Tweet:
+    VDFs have been shrunk to reflect a temporary reduced emphasis, due to cryptographic weaknesses in existing constructions:
+
+    https://ethresear.ch/t/statement
+
+    Deep crypto (eg. obfuscation) and delay
+  * Tweet:encrypted mempools have been added to reflect growing research interest in these topics.
+
+  * Tweet:
+    Big thanks to 
+    @drakefjustin
+    
+    @fradamt
+    
+    @mikeneuder
+    
+    @dankrad
+    
+    @barnabemonnot
+    
+    @asanso
+    
+    @icebearhww
+    
+    @domothy
+    
+    @gballet
+    for feedback!
+
+  * Tweet:
+    Make Ethereum cypherpunk again
+
+  * Tweet:
+    A PoS simplification proposal: make a design that only requires 8192 signatures per slot (even with SSF), making the consensus implementation considerably simpler and lighter
+
+
+  * Tweet:
+    By popular demand, an updated roadmap diagram for 2023!
+
+  * Tweet:
+    VDFs have been shrunk to reflect a temporary reduced emphasis, due to cryptographic weaknesses in existing constructions:
+
+    https://ethresear.ch/t/statement
+
+    Deep crypto (eg. obfuscation) and delay
+  * Tweet:encrypted mempools have been added to reflect growing research interest in these topics.
+
+  * Tweet:
+    Big thanks to 
+    @drakefjustin
+    
+    @fradamt
+    
+    @mikeneuder
+    
+    @dankrad
+    
+    @barnabemonnot
+    
+    @asanso
+    
+    @icebearhww
+    
+    @domothy
+    
+    @gballet
+    for feedback!
+
+  * Tweet:
+    Make Ethereum cypherpunk again
+
+  * Tweet:
+    A PoS simplification proposal: make a design that only requires 8192 signatures per slot (even with SSF), making the consensus implementation considerably simpler and lighter
+
+
+  * Tweet:
+    By popular demand, an updated roadmap diagram for 2023!
+
+  * Tweet:
+    VDFs have been shrunk to reflect a temporary reduced emphasis, due to cryptographic weaknesses in existing constructions:
+
+    https://ethresear.ch/t/statement
+
+    Deep crypto (eg. obfuscation) and delay
+  * Tweet:encrypted mempools have been added to reflect growing research interest in these topics.
+
+  * Tweet:
+    Big thanks to 
+    @drakefjustin
+    
+    @fradamt
+    
+    @mikeneuder
+    
+    @dankrad
+    
+    @barnabemonnot
+    
+    @asanso
+    
+    @icebearhww
+    
+    @domothy
+    
+    @gballet
+    for feedback!
+
+  * Tweet:
+    Make Ethereum cypherpunk again
+
+  * Tweet:
+    A PoS simplification proposal: make a design that only requires 8192 signatures per slot (even with SSF), making the consensus implementation considerably simpler and lighter
+
+  * Tweet:
+    By popular demand, an updated roadmap diagram for 2023!
+
+  * Tweet:
+    VDFs have been shrunk to reflect a temporary reduced emphasis, due to cryptographic weaknesses in existing constructions:
+
+    https://ethresear.ch/t/statement
+
+
+    Deep crypto (eg. obfuscation) and delay
+  * Tweet:encrypted mempools have been added to reflect growing research interest in these topics.
+
+  * Tweet:
+    Big thanks to 
+    @drakefjustin
+    
+    @fradamt
+    
+    @mikeneuder
+    
+    @dankrad
+    
+    @barnabemonnot
+    
+    @asanso
+    
+    @icebearhww
+    
+    @domothy
+    
+    @gballet
+    for feedback!
+
+  * Tweet:
+    Make Ethereum cypherpunk again
+
+  * Tweet:
+    A PoS simplification proposal: make a design that only requires 8192 signatures per slot (even with SSF), making the consensus implementation considerably simpler and lighter
+
+  * Tweet:
+    A post on benefits and challenges of enshrined ZK-EVMs at layer 1:
+
+    https://notes.ethereum.org/@vbuterin/enshrined_zk_evm
+
+    There's different options and the tradeoffs get complex!
+
+  * Tweet:
+    New monster post: my own current perspective on the recent debates around techno-optimism, AI risks, and ways to avoid extreme centralization in the 21st century.
+
+  * Tweet:
+    Human beings are deeply good.
+
+  * Tweet:
+    We are the brightest star. There is a lot of good that can come from ongoing human progress, into the stars  and beyond. But there are big forks in the road and we need to choose carefully. Accelerate, but accelerate carefully and well.
+
+  * Tweet:
+    d/acc ideas can be compatible with lots of existing strands of thought:
+
+  * Tweet:
+    This has risks, hence the importance of open source and limiting the power of proprietary corporations in going this direction. But it also feels like it could be the best "end state" that's both superintelligent _and_ "human", keeping us in control over our destiny.
+
+  * Tweet:
+    But eventually, someone somewhere will build a true superintelligence. And no configuration that's just "humans using tools" can hold its own against that. And so, we eventually want to integrate with AIs more deeply.
+
+  * Tweet:
+    Another alternative: build AI that grows *with* humans, rather than separately from humans. Early stages of this roadmap look quite "normal" and already have very broad support.
+
+  * Tweet:
+    Exit games for EVM validiums: the return of Plasma
+
+  * Tweet:
+    Different types of layer 2s
+
+  * Tweet:
+    About a month ago, I tried to draw this to categorize the layers, but I realized...
+
+    (i) layer 2 vs layer 3 is an architecture distinction, not a security distinction, making it much less neat
+    (ii) the big intermediate space between rollups and validiums creates a, err, firestorm
+
+  * Tweet:
+    Protocol and staking pool changes that could improve decentralization and reduce consensus overhead:
+
+  * Tweet:
+    Should Ethereum be okay with enshrining more things in the protocol?
+
+  * Tweet:
+    What do I think about Community Notes?
+
+  * Tweet:
+    I went on the Seen and Unseen podcast during my trip to India:
+
+  * Tweet:
+    What do I think about biometric proof of personhood?
+
+  * Tweet:
+    Happy tau day!
+
+    https://tauday.com
+
+    Today I'll take a break from my break from twittering and do another twitter AMA.
+
+    Feel free to ask questions about any crypto or non-crypto topic. People I follow can reply (to minimize spam), everyone can quote, I'll check both!
+
+  * Tweet:
+    Deeper dive on L2->L1 and cross-L2 reading. Much more technical than  the previous post, but gets into some ideas on how it could be  implemented.
+
+    There's a lot of value in identifying better strategies for L1 <-> L2 interactions and standardizing them.
+
+  * Tweet:
+    The Three Transitions:
+
+  * Tweet:
+    Last year 
+    @CryptoRelief_
+    led by 
+    @sandeepnailwal
+    allocated $100m to Covid research projects I wanted to fund
+
+    Sandeep and I discussed and jointly concluded these and other projects are high-impact and need follow through grants. Hence we decided to put $100m more to these projects
+
+  * Tweet:
+    Pandemics beyond Covid continue to be a large risk in the 21st century. We look forward to continuing our efforts to better live with airborne viruses and eventually live without them.
+
+  * Tweet:
+    We can do the work to understand, prevent, and cure (Long) Covid.
+
+    And we can stop airborne pathogens with clean air the same way that we stopped cholera over 100 years ago with clean water.
+
+  * Tweet:
+    We look forward to ongoing collaboration between our teams and our networks. Covid won't end on its own, and there continues to be ongoing risk that the pandemic/hyperendemic will return to a more acute state:
+
+
+  * Tweet:
+    Totally random fun thing:
+
+    I took a game I made in my pre-crypto days (back in 2011) and uploaded it to IPFS.
+
+    Enjoy, and good luck beating the tutorial!
+
+  * Tweet:
+    Don't overload Ethereum's consensus:
+
+  * Tweet:
+    Travel time 
+  * Tweet:= distance ^ 0.6
+
+  * Tweet:
+    Large in-person events I'm speaking at in person in Q2:
+
+    * EDCON in Montenegro, May 19-23 
+    @EDCON2023
+    http://edcon.io
+    * EthPrague, 
+  * Tweet:Jun 11 
+    @EthPrague
+    
+    * EthWaterloo, 
+  * Tweet:Jun 25
+
+    Also speaking online (eg. 
+    @EthTaipei
+    in Apr). Apologies to all the events I couldn't come to!
+
+  * Tweet:
+    How will Ethereum's multi-client philosophy interact with ZK-EVMs?
+
+  * Tweet:
+    Self-custody is important. And social recovery and multisig is a great way to do it.
+
+    A quick reddit post on how I think about choosing guardians for social recovery and multisig wallets:
+
+  * Tweet:
+
+
+  * Tweet:
+    An incomplete guide to stealth addresses:
+
+  * Tweet:
+    Happy new year, and lots of love to you too.
+
+    Wish you guys a peace with justice in 2023.
+
+    Слава Україні
+
+    🇺🇦🇺🇦💪
+
+  * Tweet:
+    What even is an institution?
+
+    https://vitalik.eth.limo/general/2022/12/30/institutions.html
+
+    Not sure I have amazing new insights, other than that this is a complicated muddle, but sometimes recognizing the muddle is the first step to stepping out of it!
+
+  * Tweet:
+    One of my favorite concepts that 
+    @slatestarcodex
+    taught me is defining things extensionally. See his extensional defn of high modernism:
+
+    https://slatestarcodex.com/2017/03/16/book-review-seeing-like-a-state/
+
+    It often really is far more accurate than attempting a self-contained formal description that captures everything.
+
+  * Tweet:
+    Often when a word has a confusing meaning, the most viable path is to just stop using it. "Fortnightly" is too obscure; I'd probably just say "twice per month" and "every 2 months" (eg. "your salary is $2500 twice per month") directly.
+
+  * Tweet:
+    Another pattern I despise is insisting on a really important difference in meaning to words that sound like synonyms.
+
+    "complex vs complicated"
+    "money vs currency"
+    "decentralized vs distributed"
+
+    No. Stop. Let them be synonyms, use more specific words that clarify the difference.
+
+  * Tweet:
+    Recommend this.
+
+    Giving money directly to the poorest people in the world is a simple effective way of greatly improving people's lives that we can all get behind.
+
+  * Tweet:
+    Continue to appreciate your role in making these writings accessible to more people!
+
+  * Tweet:
+    Some smart people tell me there is an earnest smart developer community in Solana, and now that the awful opportunistic money people have been washed out, the chain has a bright future.
+
+    Hard for me to tell from outside, but I hope the community gets its fair chance to thrive🦾🦾
+
+  * Tweet:
+    Looking forward to seeing who the next CEO is going to be!
+
+  * Tweet:
+    I should mention that it's good not to rush the decision too much. Overly hasty executive searches can lead to ruinous results; I know this from painful personal experience.
+
+    That said, the vox populi wants a new CEO, and that wish definitely needs to be respected!
+
+  * Tweet:
+    Also, here is my favorite 
+    @elonmusk
+    decision of all time:
+
+    https://tesla.com/blog/all-our-patent-are-belong-you
+
+    Personally I would love to see Twitter make more decisions in a similar spirit to *that*. IMO 
+    @sriramk
+    ideas on transparent content moderation are a great place to start:
+
+  * Tweet:
+    Paul Graham went down with honor.
+
+  * Tweet:
+    My new socials page:
+
+    https://vitalik.ca/files/misc_files/socials.txt
+
+    I'm eagerly trying out Mastodon, Farcaster, Lens and others, and I'll bow to Lord Elon and pay his $8/month too... but only when it's available on a non-iOS platform.
+
+    Let the best socials win! *
+
+    * there will be multiple winners
+
+  * Tweet:
+    Really not kind to Messi to use his performance in the World Cup taking up everyone's attention as cover to release this kind of thing.
+
+  * Tweet:
+    This is really bad imo
+
+  * Tweet:
+    The problem is the way in which the policies were introduced, seeming to retrofit around Elon's views on very specific situations.
+
+    Basically "central planning as overfitting":
+
+    https://radicalxchange.org/media/blog/2018-11-26-4m9b8b/
+
+    Good policy should be decided behind veil of ignorance first, applied second
+
+  * Tweet:
+    Seems like a positive step. I'm critical of Apple for many reasons (ok fine, the reasons are all basically different aspects of "being way too proprietary"), but they have done some important good things in protecting user privacy.
+
+  * Tweet:
+    It's okay to hate the fact that X is a monopoly and desperately wish for more competition to emerge, but at the same time not hate X as a whole, and even believe that X is made up of largely good people.
+
+  * Tweet:
+    Conspiracy theory: people are going to live in pods because the evil authoritarian WEF will make us
+
+    Reality: people are living in pods because of bad ultra-restrictive housing regulation, and if we legalize building proper amounts of housing, they won't have to
+
+  * Tweet:
+    Oh, and we should also tax land. Or else a big fraction of all wealth that the SV startup ecosystem creates will just keep getting gobbled up by California homeowners.
+
+  * Tweet:
+    And when we move to verkle trees, I want to replace our current storage gas accounting scheme outright with this more principled design:
+
+
+  * Tweet:
+    Needs a few more changes to truly work though:
+
+  * Tweet:
+    IMO the best argument against any EVM improvements is that it's much harder to remove EVM features than to add them, and so a culture where ongoing "EVM improvements" are expected means EVM keeps complexifying.
+
+    Some EVM changes are good, but that's the tradeoff to weigh against.
+
+  * Tweet:
+    If we can find a way to automatically convert older-version EVM code into newer-version EVM code, that would of course significantly reduce the tradeoff.
+
+  * Tweet:
+    I would love to see a study giving humans the SAT but adding a "prompt" at the end of every question ("imagine you are an expert mathematician", "proceed step by step").
+
+    I suspect there are prompts that would significantly improve results for people.
+
+  * Tweet:
+    One thing I don't understand is why people assume big powerful actors are static and unaffected by public discourse.
+
+    Like, I haven't seen any SBF take even mention the possibility that some NYT or gov person started off soft, but changed strategy after seeing public feedback.
+
+  * Tweet:
+    My one-sentence summary of the AI right now is that it does amazing stuff but it has a high error rate.
+
+    This is why it both impresses and frustrates: the times it does really well go viral on twitter, the times it makes a mistake frustrate people using it as a work aid.
+
+  * Tweet:
+    My one-sentence summary of the AI right now is that it does amazing stuff but it has a high error rate.
+
+    This is why it both impresses and frustrates: the times it does really well go viral on twitter, the times it makes a mistake frustrate people using it as a work aid.
+
+  * Tweet:
+    Sure! Happy to critique and appreciate your openness to suggestions.
+
+    I think my biggest issue with the list is that it overvalues big showy characters whose stature greatly exceeds their contribution, and undervalues people building the tech and the most meaningful applications.
+
+  * Tweet:
+    Sure! Happy to critique and appreciate your openness to suggestions.
+
+    I think my biggest issue with the list is that it overvalues big showy characters whose stature greatly exceeds their contribution, and undervalues people building the tech and the most meaningful applications.
+
+  * Tweet:
+    A quick GPT chatbot coding experiment: updating my blog
+
+  * Tweet:
+    Good balanced thread on levels of Russian support for the war.
+
+    "It's just Putin and maybe 87 other people who are the problem" is false, but "everyone in Russia bad" is also false.
+
+    Difficult topic but it's important to have good info to have the best chance of ending the war.
+
+  * Tweet:
+    I propose the term "alfalfa leak" for something that doesn't give you an easy path to short term profit, but is still ultimately good for you.
+
+
+  * Tweet:
+    What in the Ethereum application ecosystem excites me
+
+  * Tweet:
+    The case for e/acc ("effective accelerationism") for every industry *other* than AI.
+
+  * Tweet:
+    I'd add that technology for coordinating and coming to large-scale agreements (eg. https://pol.is ) is one of the industries that needs to be accelerated.
+
+  * Tweet:
+    Of all the optimistic 00s era takes, "AI will think logically from first principles so it will be free from human biases" has probably died the hardest.
+
+  * Tweet:
+    "Proof of Stake", the (physical and digital) book compiling various writings I've made over the last 
+  * Tweet:10 years, is finally out!
+
+    Orderable here:
+
+    https://proofofstake.gitcoin.co/order
+
+    Big thanks to 
+    @ntnsndr
+    
+    @7StoriesPress
+    and everyone else who helped make this happen!
+
+  * Tweet:
+    Or put another way, everyone who failed is staying silent to avoid the feeling of embarrassment.
+
+    Publicly admitting failures is an underrated and brave thing to do, because it provides society with useful information that we need in order to not get a distorted view of the world
+
+  * Tweet:
+    Or put another way, everyone who failed is staying silent to avoid the feeling of embarrassment.
+
+    Publicly admitting failures is an underrated and brave thing to do, because it provides society with useful information that we need in order to not get a distorted view of the world
+
+  * Tweet:
+    I'd recommend increasing your distance from trading/investing circles, and getting closer to the tech and application ecosystem. Learn about ZK-SNARKs, visit a meetup in Latin America, listen to All Core Devs calls and read the notes until you've memorized all the EIP numbers...
+
+  * Tweet:
+    Is there a name for the "we know what kind of person you are, we're just haggling over the price" fallacy?
+
+    That is, the (false) idea that the only two philosophically consistent ways to behave are to hold to a principle infinitely strongly or to not have that principle at all.
+
+  * Tweet:
+    So I guess we still haven't figured out how not to give large-scale murderers and thieves unlimited opportunity to become the primary topic of public conversation...
+
+    We really need better edgelords.
+
+  * Tweet:
+    EIP-1559, the merge and wallet upgrades have _drastically_ improved the UX of sending ethereum transactions since 2020.
+
+    Now I can just send a transaction, not fiddling around at all with wallet settings, and usually see it included within a few seconds.
+
+  * Tweet:
+    Freedom is important.
+
+  * Tweet:
+    Experimenting with using GPT3 to learn Spanish.
+
+    It's not perfect, but also... not that bad!
+
+    Hablantes nativos de español, qué errores cometió el GPT3?
+
+  * Tweet:
+    The notion of "governance rights" as a narrative for why a token should be valuable is pathological. You're literally saying "I'm buying $X because later on someone might buy it from me and a bunch of other people to twist the protocol toward their special interests"
+
+  * Tweet:
+    As a regular individual, "pay $500 to get a 0.0001% chance to influence the outcome of some votes" is just not a good trade. The only people for whom it is a good trade are multimillionaires and hedge funds (including attackers).
+
+  * Tweet:
+    As a regular individual, "pay $500 to get a 0.0001% chance to influence the outcome of some votes" is just not a good trade. The only people for whom it is a good trade are multimillionaires and hedge funds (including attackers).
+
+  * Tweet:
+    Question for people who argue that reading long-form books is virtuous or even necessary:
+
+    Are podcasts an acceptable substitute? If not, why not, and what even is the difference between a podcast and an audiobook?
+
+    (I frequently listen to both)
+
+  * Tweet:
+    Random fantasy novel idea: make a world where humans are one-dimensionalized and stereotyped the same way we treat orcs and elves today.
+
+    Like, there should only be one Human Nation, with one personality trait, and its capital should be called Humanton (and the main food hummus).
+
+  * Tweet:
+    One way 
+    @a16z
+    Helios could meaningfully improve things on user privacy and gain more adoption is by combining multiple useful features into its proxy: in addition to its current light client features, also route user requests through Tor.
+
+  * Tweet:
+    Amazing to see more good work on Long Covid!
+
+    Also big thanks to 
+    @CryptoRelief_
+    for providing funds that helped make this possible, and of course the Shiba Inu community.
+
+  * Tweet:
+    Amazing to see more good work on Long Covid!
+
+    Also big thanks to 
+    @CryptoRelief_
+    for providing funds that helped make this possible, and of course the Shiba Inu community.
+
+  * Tweet:
+    Thread summarizing amazing progress on EIP-4844 (proto-danksharding).
+
+    This is a crucial first step to massively lower fees on L2, helping to make it affordable for much larger numbers of users to directly use on-chain applications instead of relying on cefi intermediaries.
+
+  * Tweet:
+    New short-term censorship resistance strategy dropped, courtesy of Flashbots: setting a min bid for outsourcing
+
+    https://writings.flashbots.net/the-cost-of-resilience/
+
+    Recommend stakers using mevboost take advantage of this option!
+
+  * Tweet:
+    I'm hearing through the grapevine that something important is about to happen. Please recognize the fact that my elite social connections to people who are early to know things make me cool, and please help me validate my self-image of coolness.
+
+  * Tweet:
+    You're right I'm at my best when I just make my arguments directly, and this should have just been my first response.
+
+  * Tweet:
+    You're right I'm at my best when I just make my arguments directly, and this should have just been my first response.
+
+  * Tweet:
+    Sigh, I'll explain where I am coming from in more detail.
+
+    Basically, there's "a thing" that happens on here where people give out rumors, and many people retweet them, and lots of people start trading on that info...
+
+  * Tweet:
+    Having a safe CEX: proof of solvency and beyond
+
+    https://vitalik.ca/general/2022/11/19/proof_of_solvency.html
+
+    Big thanks to 
+    @balajis
+    and staff from 
+    @coinbase
+    
+    @binance
+    
+    @krakenfx
+    for discussion!
+
+  * Tweet:
+    Success?
+
+    Next target is abolishing daylight savings time (making it permanent is ok too, anything that stops the twice-a-year clock changes).
+
+    There's an effort in northeastern Can/US regions for this!
+
+    https://globalnews.ca/news/7485079/ontario-daylight-saving-time-amendment-act/
+
+    And US federal:
+
+  * Tweet:
+    Reminder that most of the world doesn't do daylight savings time and gets along fine:
+
+  * Tweet:
+    Also, based Mexico 🇲🇽🇲🇽
+
+  * Tweet:
+    ok guys please don't beg for money in social or chat messages
+
+    I feel bad refusing as I know lots of your causes are honorable, but unfortunately it's hard for me to verify each one, and having a pattern of responding to such requests would lead to my inbox breaking completely 😭
+
+  * Tweet:
+    My new socials page:
+
+    https://vitalik.ca/files/misc_files/socials.txt
+
+    I'm eagerly trying out Mastodon, Farcaster, Lens and others, and I'll bow to Lord Elon and pay his $8/month too... but only when it's available on a non-iOS platform.
+
+    Let the best socials win! *
+
+    * there will be multiple winners
+
+  * Tweet:
+
+    vitalik.eth
+    @VitalikButerin
+    ·
+    Nov 16, 2022
+    Sometimes I wish our language had tenses or other markers for levels of epistemic confidence. A one-syllable way to say:
+
+    "I believe X because I have mathematical proof"
+    "I'm underqualified on this topic, but my feeling is X"
+    "My impression from observations so far is X"
+
+    etc
+
+  * Tweet:
+    The "centralized anything is evil by default, use defi and self-custody" ethos did very well this week, but remember that it too has risks: bugs in smart contract code.
+
+    Important to guard against it:
+
+    * Keep code simple
+    * Audits, formal verification, etc
+    * Defense in depth
+
+  * Tweet:
+    The one I worry about most is if we have $10B in a ZK-rollup 2y from now and it gets hacked because of a bug in the circuit constraint code or the EVM wrapper around it.
+
+    For the latter, keep it simple and formal-verify. For the former, my best ideas are:
+
+  * Tweet:
+    Fascinating thread.
+
+    (Not dunking. Ethereum too will have to work hard to get widespread adoption of L2s for in-person payments. Getting the UX right is very much not an easy problem, and we should learn from existing experiments)
+
+  * Tweet:
+    Automatically downgrading every single thing SBF believed in is an error. It's important to actually think and figure out which things contributed to the fraud and which things didn't.
+
+    Don't be the guy who would have tried to cancel vegetarianism in 1945.
+
+  * Tweet:
+    Honestly the EA community's reaction to the SBF collapse has been far less defensive and much more focused on trying to figure out what lessons to learn than even I would have expected.
+
+  * Tweet:
+    I talk about crypto and culture and other stuff with 
+    @TBSocialist
+    and probably say things I shouldn't... great conversation!
+
+  * Tweet:
+    The less libertarian side of me sometimes kinda wishes that the EU would make it illegal to make iOS-only apps, and require companies of a certain size to either write a version for each major platform or use a cross-platform dev framework.
+
+  * Tweet:
+    Of course, the less libertarian side of me would also ban wearing suits, so maybe it's good that libertarianism exists and has had the level of influence on me that it has.
+
+    But if you're an SV dev, please remember: friends don't let friends build iOS-only apps.
+
+  * Tweet:
+    Some happy news for those who missed it: Kherson has been liberated. Ukraine now controls everything west of the Dnieper river.
+
+  * Tweet:
+    Also, it feels to me like recently nuclear sabre-rattling reduced a lot, and RU statements expressing desperation for a peaceful exit have increased.
+
+    https://russian.rt.com/ussr/news/1072660-peskov-specoperaciya-peregovory
+
+    Don't trust them, of course, but still tentative good news for Ukrainians' freedom and for avoiding WW3.
+
+  * Tweet:
+    Anti-malaria, pandemic response, mitigating extreme poverty, life extension research, mitigating existential risks (including AI) and thinking about the multimillion-year future of humanity are all very important and undervalued issues and will continue to be for quite a while.
+
+  * Tweet:
+    I think the effective altruism community's most underrated weakness is not having a good theory of effectively allocating *social* capital.
+
+    Especially if you're well-known, you're not just giving out money, but also reallocating public attention, inspiring the next generation...
+
+  * Tweet:
+    "Be willing to make big crazy bets, and keep accumulating wealth because you tell yourself you'll donate it later" convex-maxxing makes sense if you only think about the money, but it becomes a lot murkier once you take into account social capital.
+
+  * Tweet:
+    Accidentally convincing millions that the people who care about advancing and protecting humanity really do want to cut you up so they can equitably redistribute your organs is a far worse fate than allocating a bit of money wrongly.
+
+  * Tweet:
+    If you make a coin, don't keep the supply for yourself and "intend" to give it later. Just issue half straight to GiveWell or OpenPhil or whoever. Don't insert your own friggin fund in the middle, just give it to them.
+
+    Much like credible neutrality, try credible benevolence!
+
+  * Tweet:
+    This is why I recommend all the dog coin / word coin people to not issue tokens to *me*. If you *must* abuse my name, give the supply directly to those orgs and market it as "X% of supply donated to Vitalik-endorsed charities". But better just talk about the causes directly.
+
+  * Tweet:
+    Amazing to see more and more companies in the Ethereum ecosystem contributing and building infrastructure!
+
+  * Tweet:
+    Would you feel comfortable making a tweet saying "LA LA LA LA LA I AM A CAT 😺😺" with no context right this moment?
+
+  * Tweet:
+    1 TB monthly 
+  * Tweet:= 400 kB/sec, or 4.8 MB per slot. Enough for proto-danksharding, but not for the scaling endgame.
+
+    We do still need full danksharding with data availability sampling to make node running viable in the long term.
+
+  * Tweet:
+    One of my minor gripes with many mainstream media publications is how unwilling they are to link directly to primary sources. Often I have to go through many different articles and search keywords to find the original document.
+
+    Linking to the primary source should be the norm!
+
+  * Tweet:
+    Withdrawals from ZK-EVMs can sometimes be done with lower latency than proof generation, because you can prove specific claims:
+
+    * past state X is valid
+    * no txs from account A after X, therefore 
+    * you can still withdraw coins you had in state X
+
+    Fascinating work by 
+    @taikoxyz!
+
+  * Tweet:
+    The more complicated stuff (you had 10 ETH in state X, txdata shows you spent only 9 ETH after that, therefore...) seems tricky; it's not very account abstraction friendly. But the simple "you can withdraw immediately if you made NO txs for a while" idea is still really powerful!
+
+  * Tweet:
+    Updated roadmap diagram!
+
+  * Tweet:
+    Big changes:
+
+    * The Verge✅ is not just about "verkle trees", it's about "verification". Endgame: fully SNARKed ethereum
+    * The Scourge🧟(new): ensure reliable and fair credibly neutral transaction inclusion, solve MEV issues
+    *
+    Single slot finality as stage 2 Merge🐼 milestone
+
+  * Tweet:
+    * More concrete milestones in every category
+    * More explicit role for quantum-proofness as a necessary component of the "endgame" protocol
+
+    Big thanks to 
+    @drakefjustin
+    and others for the help!
+
+  * Tweet:
+    How well this works depends on exactly how much due diligence is done to make sure blue checks are who they say they are. "Pay $8/month and call yourself whatever" would damage the blue check's anti-scam role. But if there's more actual verification, the result is very different.
+
+  * Tweet:
+    I don't get this critique that charging $8/month creates an economic hierarchy. The current blue check system is *far* more exclusive than even the $20/month level from yesterday.
+
+    Ideally, though, verification would be charged at-cost and separate from other premium services.
+
+  * Tweet:
+    Should I publicly blab my opinions about crypto regulation more? Feels unfair to let other people get attacked by CT but never actually poke my own head out.
+
+  * Tweet:
+    Well actually here's my moderate take on mixers and privacy that I already gave in the 
+    @coinbase
+    podcast two months ago:
+
+  * Tweet:
+    Another maybe-controversial take of mine is that I don't think we should be enthusiastically pursuing large institutional capital at full speed. I'm actually kinda happy a lot of the ETFs are getting delayed. The ecosystem needs time to mature before we get even more attention.
+
+  * Tweet:
+    Basically, especially at this time, regulation that leaves the crypto space free to act internally but makes it harder for crypto projects to reach the mainstream is much less bad than regulation that intrudes on how crypto works internally.
+
+  * Tweet:
+    The "KYC on defi frontends" idea does not seem very pointful to me: it would annoy users but do nothing against hackers. Hackers write custom code to interact with contracts already. Exchanges are clearly a much more sensible place to do the KYC, and that's happening already.
+
+  * Tweet:
+    Basically, there's two main classes of regulatory policy goals: (i) consumer protection, (ii) making it harder for baddies to move large amounts of money around. The issues around (ii) are concentrated not in defi, but in large-scale crypto payments in general.
+
+  * Tweet:
+    Regs on defi frontends that *could* be more helpful may include:
+
+    (i) limits on leverage
+    (ii) requiring transparency about what audits, FV or other security checks were done on contract code
+    (iii) usage gated by knowledge-based tests instead of plutocratic net-worth minimum rules
+
+  * Tweet:
+    Also, I would love to see rules written in such a way that requirements can be satisfied by zero knowledge proofs as much as possible. ZKPs offer lots of new opportunities to satisfy reg policy goals and preserve privacy at the same time, and we should take advantage of this!
+
+  * Tweet:
+    I generally don't like subtweeting; it's impolite to people who do not have context. When I tweet a generality instead of just talking about a particular situation directly, I typically have at least two examples in mind.
+
+    (And yes, this applies self-referentially)
+
+  * Tweet:
+    Beware the impulse to preach that "we must make sacrifices for the sake of peace" but suggest only sacrifices where other people are the ones sacrificing while you give up nothing.
+
+  * Tweet:
+    Being a pluralist requires being at peace with the fact that there are groups in the world that operate under principles very alien and uncongenial to you, and that some of those groups even have some power.
+
+  * Tweet:
+    The revenue-evil curve: a different way to think about prioritizing public goods funding
+
+  * Tweet:
+    My concern with VR is similar to some anti-crypto people's concern about crypto: a feeling that people are "in love with the idea of it" in a way that far outpaces actual applications.
+
+    Just like with crypto, I do think important apps exist! But "VR for the sake of VR" won't work
+
+  * Tweet:
+    I'm so happy that Ethereum has such a strong culture of trying hard to make all our moon math as understandable and accessible to people as possible.
+
+  * Tweet:
+    It's necessary if we want to keep our ecosystem open and welcoming to people who did not follow a traditional many-year university math education track.
+
+    Decentralization requires NOT giving up and waving a PhD around saying "it's a black box, we're smart, trust us".
+
+  * Tweet:
+    It's necessary if we want to keep our ecosystem open and welcoming to people who did not follow a traditional many-year university math education track.
+
+    Decentralization requires NOT giving up and waving a PhD around saying "it's a black box, we're smart, trust us".
+
+  * Tweet:
+    Updated the doc on single slot finality:
+
+  * Tweet:
+    A quick note on upgrading from KZG to STARKs in danksharding. Probably the right thing to do in 
+  * Tweet:3-6 years when the tech becomes more mature!
+
+  * Tweet:
+    Convex-natalism: the ideology that regardless of your opinions on how many children people should have on average, more people should have either 0 or 5+ children and fewer people should have 2.
+
+  * Tweet:
+    ok what have I done
+
+  * Tweet:
+    Designated verifier proofs are a fascinating building block.
+
+    Alice sends Bob a ZK-SNARK proof "either X is true about me and data I hold, or I am Bob"
+
+    Bob knows he did not make the proof, so he knows X is true. But if Bob sends Alice's proof to Charlie, Charlie is not convinced
+
+  * Tweet:
+    Information is copiable and wants to be free. But *credible* information, not necessarily!
+
+  * Tweet:
+    The idea (from 
+    @ESYudkowsky
+    I believe?) of a country or zone where it's illegal to build most permanent structures, so mobile homes only, to prevent excessive lock-in effects tied to physical space fascinates me.
+
+    (Not saying I think it's a good idea, it's just fascinating!)
+
+  * Tweet:
+    Select replies to my poll on blue checks, selected for... I'm not sure what exactly. But anyway:
+
+  * Tweet:
+    Twitter's blue check mechanism is (compared to not having it at all)
+
+  * Tweet:
+    Is a "sidecar" a piece of software, a data blob that's not in the main RLP or SSZ hash structure, something else?
+
+    I've been hearing multiple meanings...
+
+  * Tweet:
+    Someone should make a project called "THE Protocol", so that their shills can say "Look, soandso mentioned THE!" pretty much any time anyone says anything.
+
+  * Tweet:
+    "We are going to enable open order flow. Open order flow means NO proprietary first party deals between users, wallets and builders or validators. These deals have been horrible in tradfi" 
+
+  * Tweet:
+    Based 
+    @dankrad
+    using additive notation even for the pairing group.
+
+  * Tweet:
+    The Vatican: 2.2 popes per square kilometer
+
+    Bogota: 2 POAPs per square meter
+
+  * Tweet:
+    See also: https://ethresear.ch/t/pairwise-coordination-subsidies-a-new-quadratic-funding-design/5553
+
+    Highly scoring agreement if it's coming from diverse sources - an important idea in social mechanism design
+
+  * Tweet:
+    The cool thing about this idea is that it has great cross-tribal appeal.
+
+    Translated into IDW speak, for example: "50 actually independent thinkers are worth more than 1000 NPCs who all consume the same media and vote the same way". Very appealing to that group.
+
+  * Tweet:
+    At 
+    @EFDevcon
+    :
+
+    @glenweyl
+    : "... so we count a group of people less if they are all correlated with each other..."
+    @VladZamfir
+    : "Ooh, is that like punishing fascism?"
+    @glenweyl
+    : "Kind of!"
+
+  * Tweet:
+    Omakase <-> synthetic technocracy
+    Everyone orders for themselves <-> corporate libertarianism
+    Family style <-> digital democracy
+
+  * Tweet:
+    Slides from my presentation on multi-provers in rollups today:
+
+  * Tweet:
+    Eli and the Starkware team have made many crucial contributions to making SNARK and STARK tech more understandable and accessible. I learned a lot from them myself!
+
+  * Tweet:
+    > made many crucial contributions
+
+    Including inventing STARKs, of course!
+
+  * Tweet:
+    Lots of people. Many are scared; repression has become very effective over the last 10 years. Some hate what is going on but have no idea what to do and end up leading to sad situations like this:
+
+  * Tweet:
+    An exploration on whether or not we could replace KZG with arithmetic hashes, eg. Poseidon, in EIP-4844 (proto-danksharding):
+
+    https://ethresear.ch/t/arithmetic-hash-based-alternatives-to-kzg-for-proto-danksharding-eip-4844/13863
+
+    Summary: yeah it's possible, but there are a lot of tradeoffs.
+
+    Thanks 
+    @dimahledba
+    for suggesting this topic!
+
+  * Tweet:
+    These fancy new arithmetic hash functions look so beautiful - the way cryptography should look. Much cleaner than SHA256.
+
+    Looking forward to see these functions get more battle tested and reviewed and start to get more widely adopted over time.
+
+  * Tweet:
+    Reinforced Concrete is fun too.
+
+    The BARS permutation is a bit ugly, but I guess it's hard to come up with something really clean when you're trying to define a non-arithmetic computation over arbitrary prime fields :(
+
+  * Tweet:
+    So many scam accounts have blue checkmarks these days.
+
+    Seems like a complete failure of blue checkmarks in their current form. I'm definitely seeing the wisdom of turning twitter into an open API and letting third parties try to make the best UIs to solve these problems.
+
+  * Tweet:
+    How much can we constrain builders without bringing back heavy burdens to block proposers?
+
+  * Tweet:
+    The big really valuable and necessary thing that ERC-4337 provides for account abstraction is a *decentralized fee market* for user operations going into smart contract wallets.
+
+  * Tweet:
+    You should be able to send an op into a public mempool, and if it pays enough fees, reliably expect it to get included. This should NOT depend on ANY:
+
+    * Centralized actors
+    * Reputation systems for op senders
+    * ETH held in a separate EOA
+    * External services for account creation
+
+  * Tweet:
+    This is the gold standard that the existing public mempool provides. And we absolutely need to provide the same guarantees for smart contract wallets, or else we risk worsening centralization and censorship.
+
+  * Tweet:
+    Doing this securely requires a mempool node to be able to determine whether or not a given op is guaranteed to pay fees before rebroadcasting it.
+
+    This is quite hard to do, because it requires checking that the op does not depend on state that might change in the next block.
+
+  * Tweet:
+    ERC-4337, and its predecessor EIP-2938, do this by enshrining a split between "validation" and "execution".
+
+    The validation step is bounded in how much gas it can consume, and cannot use "forbidden opcodes" that access state outside the account. If an op does this, it is rejected
+
+  * Tweet:
+    All this ensures that if an op gets broadcasted through the mempool, then it is guaranteed that that op can get included on-chain and will pay fees - unless another op from that same account gets in first. Like Ethereum txs today.
+
+    All this prevents DoS attacks on the mempool.
+
+  * Tweet:
+    The "paymaster" feature allows paymaster contracts, which let you separate "who pays for the op" and "who sends the op".
+
+  * Tweet:
+    But if you use this feature, then you are relying on some external mechanism to pay for the op, and you should better be sure that it won't disappear on you!
+
+    (If it does, you would have to pay ETH and push the op through yourself)
+
+  * Tweet:
+    The signature aggregation feature allows builders and batch submitters to also aggregate signatures (eg. BLS, later with SNARKs), greatly reducing the data that goes on chain. This is a critical cost-saving feature for rollups, where data costs dominate.
+
+  * Tweet:
+    Some quick theorycrafting of how much data space we can save by improving compression (especially in rollups).
+
+    ERC4337 signature aggregation ( https://github.com/eth-infinitism/account-abstraction/pull/92 ) is essential to this.
+
+  * Tweet:
+    Now, problems that are NOT solved by ERC-4337!
+
+    * Letting existing EOAs send ops that get paid for by third parties
+    * Upgrading existing EOAs to contracts
+    * Integration with transaction inclusion lists (an anti-censorship feature in PBS)
+
+  * Tweet:
+    These can't be done with an ERC. They require an actual consensus-changing EIP.
+
+    * EIP-3074 does the first
+    * EIP-5003 does the second
+    * No EIPs yet for the third, but see an introduction to the problem and a solution path here:
+
+  * Tweet:
+    The good news is that we're narrowing down toward an actual path for account abstraction, something we've always wanted but have not managed to actually have!
+
+    And with the "carrot" of cost savings in rollups with signature aggregation, there's finally an incentive to adopt it.
+
+  * Tweet:
+    Big thanks and appreciation to all the amazing people working on refining all of these proposals and actually getting them out there. Excited to keep moving this forward!
+
+  * Tweet:
+    These can't be done with an ERC. They require an actual consensus-changing EIP.
+
+    * EIP-3074 does the first
+    * EIP-5003 does the second
+    * No EIPs yet for the third, but see an introduction to the problem and a solution path here:
+
+  * Tweet:
+    How long until there's a scandal related to water, and some writer calls it "Watergate" because that's the correct default modern English-language way to create a name for a scandal, without even realizing what they just did there?
+
+  * Tweet:
+    I think editing should be available, but when you edit a tweet, the portion that was edited should become highlighted. Would not interfere with typo fixes etc, but would be more likely to prevent attempts to abuse the feature. 
+
+  * Tweet:
+    I built a basic implementation of a SNARK (PLONK) compiler, prover and verifier in python:
+
+    https://github.com/ethereum/research/tree/master/py_plonk
+
+    Intended primarily for educational value, and for simple inputs it can exactly reproduce verification keys generated by https://zkrepl.dev
+
+  * Tweet:
+    Big thanks to 
+    @jbaylina
+    
+    @gubsheep
+    for help!
+
+  * Tweet:
+    I want to someday do an ethereum conference at the top of a 1km mountain with no car access. Wonder what kind of attendees and discussion that filter would lead to.
+
+  * Tweet:
+    I don't know how "horseshoe theory is false" ever managed to become such an unquestioned Very Serious Person meme. There are clearly many common traits in extremists on all sides that come from attraction to extremeness itself, which lead to lots of agreement on tangential issues
+
+  * Tweet:
+    "Proof of Stake", the (physical and digital) book compiling various writings I've made over the last 
+  * Tweet:10 years, is finally out!
+
+    Orderable here:
+
+    https://proofofstake.gitcoin.co/order
+
+    Big thanks to 
+    @ntnsndr
+    
+    @7StoriesPress
+    and everyone else who helped make this happen!
+
+  * Tweet:
+    Stuff like this is why Ukraine can't just "give up a fifth of their territory if that's what it takes to ensure peace".
+
+    This isn't a game of Risk, there's millions of people stuck in occupied territory, and it's not the sort of occupation any of you would be okay with living in.
+
+  * Tweet:
+    I've seen civilian death estimates for Mariupol everywhere in the 20k-120k range. At the higher end, that would be over a quarter of the entire city. And this is for a city with as large a population as Miami.
+
+  * Tweet:
+    16 hours left to contribute to the gitcoin grants round!
+
+  * Tweet:
+    A logo for the Casper consensus algorithm, Stable Diffusion via https://beta.dreamstudio.ai
+
+    (this one took a brush and a few prompts, it's not quite good with text yet, but getting there!)
+
+  * Tweet:
+    Think of the one person in the world who is the most ideologically aligned with you.
+
+    On what percentage of issues that are important to you do they share your view?
+
+  * Tweet:
+    People whose primary vibe is "I and my tribe are domain-expertise-endowed professionals, the people I criticize and mock are amateurs, and you should shut up" are really really uncool, and people should recognize the pattern and immediately unfollow anyone who exhibits it.
+
+  * Tweet:
+    The main exception is of course that if you find someone who has this vibe, and they accidentally demonstrate a big and relevant error in domain knowledge themselves, then it's okay to flip over your own domain expertise cards as part of exposing their hypocrisy.
+
+  * Tweet:
+    DAOs are not corporations: where decentralization in autonomous organizations matters
+
+  * Tweet:
+    I try to explain the additive vs multiplicative notation issue for elliptic curves, and get a little bit into the question of what to do with the GT group.
+
+  * Tweet:
+    It's also the anniversary of the 2016 Shanghai DoS attacks.
+
+  * Tweet:
+    Thread by 
+    @davidgerard
+    , criticizing 
+    @VitalikButerin
+    .
+
+  * Tweet:
+    The thing you do with lots of elliptic curve points and lots of scalars
+
+  * Tweet:
+    What kind of layer 3s make sense?
+
+  * Tweet:
+    And we finalized!
+
+    Happy merge all. This is a big moment for the Ethereum ecosystem. Everyone who helped make the merge happen should feel very proud today.
+
+  * Tweet:
+    "The merge will reduce worldwide electricity consumption by 0.2%" - 
+
+  * Tweet:
+    Looks like the "hashrate will drop weeks before the merge due to miners rushing to sell ahead of everyone else" thesis has been proven completely false.
+
+    I'm a bit surprised! I argued against a 50% drop but definitely expected like 5-10%.
+
+  * Tweet:
+    12 hours until the merge!
+
+  * Tweet:
+    Excited to never have to hear about "ommer blocks" again.
+
+    (ok fine I know "ommer" was meant to be a gender-neutral replacement for "uncle", but come on, it just *sounds* like an insult for people who meditate)
+
+    Oh, and saving electricity. That's cool too.
+
+  * Tweet:
+    Normalize saying "dub" (instead of "double-yoo") as the name of the letter W.
+
+    All letters deserve a one-syllable name.
+
+  * Tweet:
+    This is an important disconnect that people building in the crypto space do need to be aware of. Crypto-wealthy people often join DAOs for tribal affiliation and fun and self-expression, but our long-term target audience wants DAOs designed around very pragmatic needs.
+
+  * Tweet:
+    "Rich people are grubby power trippers" is an overrated frame. "Rich people wanna have fun" is an often more accurate frame that explains well why there are rich/poor misalignments even among good people.
+
+  * Tweet:
+    Grubby power trippers of course exist and continue to be a big problem. In business and in politics.
+
+  * Tweet:
+    Modern rich-country elite politics is not about economics, it's about vibes, exhibit #247.
+
+    (Poor countries and even non-elites in rich countries definitely operate this way much less. They can't afford to)
+
+  * Tweet:
+    Big thanks to @KyivTechSummit and everyone involved for the opportunity to visit!
+
+    An amazing and brave community in Ukraine that we all have a lot to learn from.
+
+  * Tweet:
+    One thing that people don't appreciate enough about land taxes (and even property taxes) is that the existence of the tax means the property is much cheaper for you to acquire in the first place. You can put the difference into stocks and pay the tax out of the price gains.
+
+  * Tweet:
+    Second update from Balvi! 🧵
+
+    Lots more anti-covid projects funded, thanks to funds from 
+    @Shibtoken
+    
+    @CryptoRelief_
+    !
+
+    Previous update here:
+
+  * Tweet:
+    Masks that actually look really cool:
+
+  * Tweet:
+    @OpenAeros
+    , making better masks and testing them:
+
+  * Tweet:
+    The merge is still expected to happen around Sep 13-15. What's happening today is the Bellatrix hard fork, which *prepares* the chain for the merge. Still important though - make sure to update your clients!
+
+  * Tweet:
+    OK wow, half of yall literally think that someone should be able to lock down every five-letter word in the Scrabble dictionary (which includes exotic stuff like "ZORIL") for a hundred years for less than the price of four lambos.
+
+  * Tweet:
+    A thread of random polls about myself:
+
+  * Tweet:
+    Whom of these crypto personalities do I respect the most?
+
+    (If "none", interpret as "disrespect the least")
+
+  * Tweet:
+    Quantum computers break:
+
+    * RSA and anything based on factoring
+    * Elliptic curves
+    * Unknown order groups
+
+    Quantum computers don't break:
+
+    * Hashes
+    * Lattices
+
+  * Tweet:
+    Many of you got this one very wrong btw. Quantum computers with Shor's algorithm break elliptic curves completely. Hashes (like SHA256) survive quantum computers just fine, though security degrades somewhat and longer hash lengths become recommended.
+
+  * Tweet:
+    What is a fair price that someone should have to pay to register and unconditionally guarantee ownership of a 5-letter .eth domain for 100 years?
+
+  * Tweet:
+    Neural networks as philosophy:
+
+    Late 20th century philosophical thought was heavily influenced by intuitions from study of computers and algorithms: *we too* are algorithms, what could those insights say about us?
+
+    I wonder if the 21st century will do the same with neural nets.
+
+  * Tweet:
+    Does P = NP? Do you believe in god?
+
+  * Tweet:
+    Assuming quantum computers turn out to be impractical, which security assumption do you think is more likely to still hold in the year 3000?
+
+    (By "hold", let's say I mean "takes more than 2^100 computational steps to crack")
+
+  * Tweet:
+    Best wishes to ETHWarsaw hackers!
