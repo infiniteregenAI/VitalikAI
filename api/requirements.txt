@@ -1,0 +1,22 @@
+# Core dependencies
+langchain
+langchain_openai
+langchain_community
+langchain_core
+chromadb
+pydantic
+pydantic-settings
+openai
+
+# Web scraping and HTTP requests
+requests
+beautifulsoup4
+
+# FastAPI and related utilities
+fastapi
+uvicorn
+
+# NLP and embeddings
+tweepy
+python-dotenv
+PyPDF2
