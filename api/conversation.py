@@ -2,7 +2,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 import asyncio
-from vitalik_chat import VitalikAgent
+from api.vitalik_chat import VitalikAgent
 
 # Define request model
 class ChatRequest(BaseModel):
@@ -38,12 +38,13 @@ async def stream_chat(request: ChatRequest):
                 # Stream response from the agent
                 response = await agent.query(request.user_input)
 
-                # Simulate streaming by splitting the response into chunks
+                # Stream the response chunk by chunk
                 for chunk in response["response"]:
-                    yield chunk
+                    yield chunk  # Send the chunk to the client
                     await asyncio.sleep(0)  # Yield control to the event loop
             except Exception as e:
-                yield f"Error: {str(e)}"
+                error_message = f"Streaming error: {str(e)}"
+                yield error_message
 
         # Return the streaming response
         return StreamingResponse(

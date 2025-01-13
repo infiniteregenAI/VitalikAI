@@ -77,3 +77,18 @@ graph TD
     M --> O
     M --> P
     M --> Q
+```
+
+# Running FastAPI:
+```bash
+python -m venv venv
+```
+```bash
+.\venv\Scripts\activate
+```
+```bash
+pip install -r requirements.txt
+```
+```bash
+uvicorn vitalik_api:app --reload
+```
