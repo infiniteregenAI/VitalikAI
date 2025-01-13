@@ -90,5 +90,5 @@ python -m venv venv
 pip install -r requirements.txt
 ```
 ```bash
-uvicorn vitalik_api:app --reload
+uvicorn api.conversation:app --reload
 ```
