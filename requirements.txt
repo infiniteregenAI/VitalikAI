@@ -1,28 +1,22 @@
-# API Dependencies
-fastapi
-python-multipart
-sse-starlette
-uvicorn
+# Core dependencies
+langchain
+langchain_openai
+langchain_community
+langchain_core
+chromadb
 pydantic
 pydantic-settings
-langchain_openai
-
-# Document Processing
-python-docx
-PyPDF2
-langchain
-langchain-community
-chromadb
-
-# OpenAI Integration
 openai
-tiktoken
 
-# Utilities
+# Web scraping and HTTP requests
+requests
+beautifulsoup4
+
+# FastAPI and related utilities
+fastapi
+uvicorn
+
+# NLP and embeddings
+tweepy
 python-dotenv
-tqdm
-
-# File Handling
-aiofiles
-asyncio
-typing-extensions
+PyPDF2
