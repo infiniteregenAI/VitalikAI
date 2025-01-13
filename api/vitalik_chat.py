@@ -10,8 +10,8 @@ from langchain_core.tools import Tool
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.memory import ConversationBufferWindowMemory
 import chromadb
-from models import ReasoningLayer
-from utils import VitalikUtils
+from api.models import ReasoningLayer
+from api.utils import VitalikUtils
 
 class VitalikAgent:
     def _format_nested(self, template: str, data_dict: Dict) -> str:
@@ -275,11 +275,17 @@ class VitalikAgent:
                 "input": user_input
             })
             
+            # Ensure to handle the response correctly
+            if isinstance(agent_response, dict) and 'output' in agent_response:
+                response_output = agent_response['output']
+            else:
+                response_output = "Unexpected response format."
+
             # Perform layered analysis
             analysis = await self._layered_analysis(user_input)
             
             return {
-                "response": agent_response['output'],
+                "response": response_output,
                 "context": {
                     "analysis": analysis,
                     "sources": {
