@@ -18,7 +18,7 @@ class VitalikUtils:
             results["distances"][0]
         )]
 
-    def synthesize_thoughts(self, results: List[Dict]) -> str:
+    async def synthesize_thoughts(self, results: List[Dict]) -> str:
         """Synthesize thoughts based on search results"""
         prompt = f"""Given this information, what would I (Vitalik) think about this?
         Consider my writing style and typical approach to such topics.
@@ -26,10 +26,19 @@ class VitalikUtils:
         Information:
         {results}"""
         
-        response = self.llm.invoke(prompt)  # Change here
-        return response
+        response = await self.llm.invoke(prompt)  # Assuming invoke is async
+        
+        # Check if the response is a stream
+        if hasattr(response, 'stream'):
+            # Collect the streamed output
+            output = ""
+            async for chunk in response.stream():
+                output += chunk
+            return output
+        else:
+            return response  # Handle non-streaming response
 
-    def draw_conclusion(self, results: List[Dict]) -> str:
+    async def draw_conclusion(self, results: List[Dict]) -> str:
         """Draw conclusions from search results"""
         prompt = f"""Based on these findings, what concrete insights would I (Vitalik) focus on?
         Frame it in my characteristic style of combining technical and philosophical perspectives.
@@ -37,9 +46,17 @@ class VitalikUtils:
         Findings:
         {results}"""
         
-        response = self.llm.invoke(prompt)  # Change here
-        return response
-
+        response = await self.llm.invoke(prompt)  # Assuming invoke is async
+        
+        # Check if the response is a stream
+        if hasattr(response, 'stream'):
+            # Collect the streamed output
+            output = ""
+            async for chunk in response.stream():
+                output += chunk
+            return output
+        else:
+            return response  # Handle non-streaming response
     def calculate_confidence(self, results: List[Dict]) -> float:
         """Calculate confidence score based on result relevance"""
         if not results:
