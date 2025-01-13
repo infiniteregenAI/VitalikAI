@@ -2,7 +2,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import StreamingResponse
 from pydantic import BaseModel
 import asyncio
-from api.vitalik_chat import VitalikAgent
+import uvicorn
+from api_vitalik_chat import VitalikAgent
 
 # Define request model
 class ChatRequest(BaseModel):
@@ -56,3 +57,6 @@ async def stream_chat(request: ChatRequest):
     except Exception as e:
         print(f"Error during chat processing: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
+
+if __name__ == "__main__":
+    uvicorn.run(app, host="127.0.0.1", port=8000)

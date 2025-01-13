@@ -94,5 +94,5 @@ pip install -r api.requirements.txt
 ```
 
 ```bash
-uvicorn api.conversation:app --reload
+python api\conversation.py
 ```

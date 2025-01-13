@@ -10,8 +10,8 @@ from langchain_core.tools import Tool
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.memory import ConversationBufferWindowMemory
 import chromadb
-from api.models import ReasoningLayer
-from api.utils import VitalikUtils
+from api_models import ReasoningLayer
+from api_utils import VitalikUtils
 
 class VitalikAgent:
     def _format_nested(self, template: str, data_dict: Dict) -> str:
