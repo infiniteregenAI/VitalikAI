@@ -27,6 +27,7 @@ class VitalikUtils:
         {results}"""
         
         response = await self.llm.invoke(prompt)  # Assuming invoke is async
+        print(f"Response type: {type(response)}")  # Debugging line
         
         # Check if the response is a stream
         if hasattr(response, 'stream'):

@@ -227,41 +227,47 @@ class VitalikAgent:
     async def _layered_analysis(self, topic: str) -> List[ReasoningLayer]:
         """Perform layered analysis of a topic"""
         layers = []
-        
+
         try:
             # Layer 1: Technical Understanding
             tech_results = await self._search_technical_db(topic)
+            tech_thoughts = await self.utils.synthesize_thoughts(tech_results)  # Await here
+            tech_conclusion = await self.utils.draw_conclusion(tech_results)  # Await here
             layers.append(ReasoningLayer(
                 name="Technical Analysis",
                 description="Understanding the technical fundamentals",
-                thought_process=self.utils.synthesize_thoughts(tech_results),
-                conclusion=self.utils.draw_conclusion(tech_results),
+                thought_process=tech_thoughts,
+                conclusion=tech_conclusion,
                 confidence=self.utils.calculate_confidence(tech_results),
                 sources=tech_results
             ))
-            
+
             # Layer 2: Practical Implementation
             blog_results = await self._search_blog_db(topic)
+            blog_thoughts = await self.utils.synthesize_thoughts(blog_results)  # Await here
+            blog_conclusion = await self.utils.draw_conclusion(blog_results)  # Await here
             layers.append(ReasoningLayer(
                 name="Practical Implementation",
                 description="Real-world applications and considerations",
-                thought_process=self.utils.synthesize_thoughts(blog_results),
-                conclusion=self.utils.draw_conclusion(blog_results),
+                thought_process=blog_thoughts,
+                conclusion=blog_conclusion,
                 confidence=self.utils.calculate_confidence(blog_results),
                 sources=blog_results
             ))
-            
+
             # Layer 3: Evolution and Context
             temporal_results = await self._search_temporal_db(topic)
+            temporal_thoughts = await self.utils.synthesize_thoughts(temporal_results)  # Await here
+            temporal_conclusion = await self.utils.draw_conclusion(temporal_results)  # Await here
             layers.append(ReasoningLayer(
                 name="Temporal Context",
                 description="How thinking on this topic has evolved",
-                thought_process=self.utils.synthesize_thoughts(temporal_results),
-                conclusion=self.utils.draw_conclusion(temporal_results),
+                thought_process=temporal_thoughts,
+                conclusion=temporal_conclusion,
                 confidence=self.utils.calculate_confidence(temporal_results),
                 sources=temporal_results
             ))
-            
+
             return layers
         except Exception as e:
             print(f"Error in layered analysis: {str(e)}")
