@@ -1,18 +1,14 @@
 from fastapi import FastAPI, HTTPException
 from pydantic import BaseModel
 import asyncio
-from vitalik import VitalikAgent
+from vitalik_chat import VitalikAgent
 
-# Define request and response models
-class QueryRequest(BaseModel):
+# Define request model
+class ChatRequest(BaseModel):
     user_input: str
 
-class QueryResponse(BaseModel):
-    response: str
-    context: dict
-
 # Initialize FastAPI app
-app = FastAPI(title="VitalikAgent API", description="API for interacting with VitalikAgent.")
+app = FastAPI(title="VitalikAgent Chat API", description="A chat endpoint for VitalikAgent.")
 
 # Initialize the VitalikAgent instance
 @app.on_event("startup")
@@ -24,25 +20,22 @@ async def initialize_agent():
         print(f"Failed to initialize VitalikAgent: {str(e)}")
         raise RuntimeError("VitalikAgent initialization failed.")
 
-@app.post("/query", response_model=QueryResponse)
-async def query_agent(request: QueryRequest):
+@app.post("/chat")
+async def chat(request: ChatRequest):
     """
-    Endpoint to query the VitalikAgent.
+    Chat endpoint to interact with VitalikAgent.
 
     Parameters:
     - user_input (str): User's query string.
 
     Returns:
-    - JSON response with agent's output and context.
+    - The agent's reply as plain text.
     """
     try:
         result = await agent.query(request.user_input)
         if "error" in result:
             raise HTTPException(status_code=500, detail=result["error"])
-        return QueryResponse(
-            response=result["response"],
-            context=result["context"]
-        )
+        return result["response"]
     except Exception as e:
-        print(f"Error during query processing: {str(e)}")
+        print(f"Error during chat processing: {str(e)}")
         raise HTTPException(status_code=500, detail=str(e))
