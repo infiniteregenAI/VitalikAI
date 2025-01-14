@@ -11,8 +11,13 @@ from langchain.agents import create_openai_functions_agent, AgentExecutor
 from langchain.memory import ConversationBufferWindowMemory
 
 # Define the request model
+class ChatMessage(BaseModel):
+    role: str  # "system", "human", or "assistant"
+    content: str
+
 class ChatRequest(BaseModel):
     user_input: str
+    previous_messages: list[ChatMessage] = []
 
 # VitalikAgent with minimal functionality
 class VitalikAgent:
@@ -26,7 +31,7 @@ class VitalikAgent:
                 model="gpt-4o-mini", 
                 temperature=0.7, 
                 stream=True
-                )
+            )
             self.embeddings = OpenAIEmbeddings()
             self.memory = ConversationBufferWindowMemory(k=5, memory_key="chat_history", return_messages=True)
 
@@ -70,8 +75,16 @@ class VitalikAgent:
         agent = create_openai_functions_agent(self.llm, self.tools, prompt)
         return AgentExecutor(agent=agent, tools=self.tools, memory=self.memory, verbose=True)
 
-    async def stream_query(self, user_input: str):
+    async def stream_query(self, user_input: str, previous_messages: list[ChatMessage]):
         try:
+            # Populate memory with previous messages
+            for message in previous_messages:
+                if message.role == "human":
+                    self.memory.chat_memory.add_user_message(message.content)
+                elif message.role == "assistant":
+                    self.memory.chat_memory.add_ai_message(message.content)
+
+            # Process the user input
             agent_response = await self.agent.ainvoke({"input": user_input})
             if hasattr(agent_response, "stream"):
                 async for chunk in agent_response.stream():
@@ -93,7 +106,7 @@ except Exception as e:
 @app.post("/stream_chat")
 async def stream_chat(request: ChatRequest):
     async def event_generator():
-        async for chunk in agent.stream_query(request.user_input):
+        async for chunk in agent.stream_query(request.user_input, request.previous_messages):
             yield chunk
     return StreamingResponse(event_generator(), media_type="text/event-stream")
 
