@@ -1,11 +1,9 @@
 import json
 import asyncio
-from string import Formatter
-from typing import List, Dict, Any
+from typing import List, Dict
 import os
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.agents import create_openai_functions_agent, AgentExecutor
-from langchain_core.messages import AIMessage, HumanMessage
 from langchain_core.tools import Tool
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.memory import ConversationBufferWindowMemory
