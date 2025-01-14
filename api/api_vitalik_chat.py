@@ -293,24 +293,3 @@ class VitalikAgent:
                 "status": "failed"
             }
 
-if __name__ == "__main__":
-    async def main():
-        try:
-            print("Initializing VitalikAgent...")
-            agent = VitalikAgent()
-            print("Agent initialized successfully!")
-            
-            print("\nProcessing query...")
-            result = await agent.query(
-                "What are your thoughts on Ethereum scaling solutions?"
-            )
-            
-            print("\nResponse:", result["response"])
-            
-        except Exception as e:
-            print(f"An error occurred: {str(e)}")
-            import traceback
-            print("\nFull traceback:")
-            print(traceback.format_exc())
-    
-    asyncio.run(main())
