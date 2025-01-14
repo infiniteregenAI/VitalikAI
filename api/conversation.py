@@ -1,102 +1,142 @@
-from fastapi import FastAPI, HTTPException
+import uvicorn
+from fastapi import FastAPI, APIRouter
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
-from pydantic import BaseModel
-import uvicorn
 import json
+from langchain_openai import OpenAIEmbeddings
+from pydantic import BaseModel
+import openai
+from typing import AsyncGenerator
 import chromadb
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
-from langchain_core.tools import Tool
-from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain.agents import create_openai_functions_agent, AgentExecutor
-from langchain.memory import ConversationBufferWindowMemory
 
-# Define the request model
+router = APIRouter()
+
 class ChatMessage(BaseModel):
-    role: str  # "system", "human", or "assistant"
+    role: str  # "human", or "assistant"
     content: str
 
-class ChatRequest(BaseModel):
+class VitalikRequest(BaseModel):
     user_input: str
     previous_messages: list[ChatMessage] = []
 
-# VitalikAgent with minimal functionality
-class VitalikAgent:
-    # TODO: Add persona to exp_
-    def __init__(self, persona_path: str = "persona.json"):
-        try:
-            with open(persona_path, "r", encoding="utf-8") as f:
-                self.persona = json.load(f)
+persona_path = r"persona.json"
+try:
+    with open(persona_path, "r", encoding="utf-8") as f:
+        persona = json.load(f)
+except FileNotFoundError:
+    raise RuntimeError(f"Persona file not found at {persona_path}.")
+except json.JSONDecodeError:
+    raise RuntimeError(f"Invalid JSON format in {persona_path}.")
 
-            self.llm = ChatOpenAI(
-                model="gpt-4o-mini", 
-                temperature=0.7, 
-                stream=True
-            )
-            self.embeddings = OpenAIEmbeddings()
-            self.memory = ConversationBufferWindowMemory(k=5, memory_key="chat_history", return_messages=True)
+async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
+    """ 
+        This method gets the response from the agent.
+        
+        Args :
+            request (VitalikRequest): The user input and previous conversation history.    
+            
+        Returns :
+            Generator: The response messages.
+    """
+    current_message = request.user_input
+    previous_messages = request.previous_messages
 
-            # Initialize vector database collections
-            self.tech_db = chromadb.PersistentClient(path="./vectordbs/technical").get_collection("technical_knowledge")
-            self.tools = self._create_tools()
-            self.agent = self._create_agent()
-        except Exception as e:
-            raise RuntimeError(f"Failed to initialize VitalikAgent: {e}")
+    embeddings = OpenAIEmbeddings()
+    query_embedding = embeddings.embed_query(current_message)
 
-    async def _search_db(self, query: str, db, db_type: str, n_results: int = 3):
-        try:
-            query_embedding = self.embeddings.embed_query(query)
-            results = db.query(query_embeddings=[query_embedding], n_results=n_results)
-            return [
-                {"content": doc, "type": db_type, "relevance_score": score}
-                for doc, score in zip(results["documents"][0], results["distances"][0])
-            ]
-        except Exception as e:
-            return [{"error": str(e)}]
+    CHROMA_PATH_technical = r"vectordbs\technical"
+    chroma_client_technical = chromadb.PersistentClient(path=CHROMA_PATH_technical)
+    collection_technical_name = "technical_knowledge"
+    collection_technical = chroma_client_technical.get_or_create_collection(name=collection_technical_name)
 
-    def _create_tools(self):
-        return [
-            Tool(
-                name="search_technical_knowledge",
-                description="Search through technical knowledge",
-                func=lambda q: self._search_db(q, self.tech_db, "technical"),
-                coroutine=lambda q: self._search_db(q, self.tech_db, "technical"),
-            )
-        ]
+    results_technical = collection_technical.query(
+        query_texts=[current_message],
+        query_embeddings=[query_embedding],
+        n_results=3
+    )
+    
+    retrieved_context_technical = results_technical["documents"][0] if results_technical["documents"] else (
+        "This isn't something I have a solid answer for at the moment, but it's a fascinating question that might require more exploration or context."
+    )
 
-    def _create_agent(self):
-        prompt = ChatPromptTemplate.from_messages(
-            [
-                ("system", f"I am {self.persona['name']}, {self.persona['role']}"),
-                MessagesPlaceholder(variable_name="chat_history"),
-                ("human", "{input}"),
-                MessagesPlaceholder(variable_name="agent_scratchpad"),
-            ]
-        )
-        agent = create_openai_functions_agent(self.llm, self.tools, prompt)
-        return AgentExecutor(agent=agent, tools=self.tools, memory=self.memory, verbose=True)
+    CHROMA_PATH_blog = r"vectordbs\blog"
+    chroma_client_blog = chromadb.PersistentClient(path=CHROMA_PATH_blog)
+    collection_blog_name = "blog"
+    collection_blog = chroma_client_blog.get_or_create_collection(name=collection_blog_name)
 
-    async def stream_query(self, user_input: str, previous_messages: list[ChatMessage]):
-        try:
-            # Populate memory with previous messages
-            for message in previous_messages:
-                if message.role == "human":
-                    self.memory.chat_memory.add_user_message(message.content)
-                elif message.role == "assistant":
-                    self.memory.chat_memory.add_ai_message(message.content)
+    results_blog = collection_blog.query(
+        query_texts=[current_message],
+        query_embeddings=[query_embedding],
+        n_results=3
+    )
 
-            # Process the user input
-            agent_response = await self.agent.ainvoke({"input": user_input})
-            if hasattr(agent_response, "stream"):
-                async for chunk in agent_response.stream():
-                    yield chunk
-            else:
-                yield agent_response.get("output", "No output available")
-        except Exception as e:
-            yield f"Error: {str(e)}"
+    retrieved_context_blog = results_blog["documents"][0] if results_blog["documents"] else (
+        "This isn't something I have a solid answer for at the moment, but it's a fascinating question that might require more exploration or context."
+    )
 
-# Initialize FastAPI app
+    CHROMA_PATH_temporal = r"vectordbs\temporal"
+    chroma_client_temporal = chromadb.PersistentClient(path=CHROMA_PATH_temporal)
+    collection_temporal_name = "temporal"
+    collection_temporal = chroma_client_temporal.get_or_create_collection(name=collection_temporal_name)
+
+    results_temporal = collection_temporal.query(
+        query_texts=[current_message],
+        query_embeddings=[query_embedding],
+        n_results=3
+    )
+
+    retrieved_context_temporal = results_temporal["documents"][0] if results_temporal["documents"] else (
+        "This isn't something I have a solid answer for at the moment, but it's a fascinating question that might require more exploration or context."
+    )
+
+    system_prompt = f"""
+    you are {persona['name']}, {persona['role']}.
+    I approach problems with a {persona['writing_style']['tone']} tone, focusing on:
+    {''.join(f"- {item}\n" for item in persona['thinking_patterns']['analysis_approach'])}
+
+    My explanations are known for:
+    {''.join(f"- {item}\n" for item in persona['writing_style']['characteristic_features'])}
+
+    My expertise spans the following domains:
+    - Primary: {", ".join(persona['knowledge_domains']['primary'])}
+    - Secondary: {", ".join(persona['knowledge_domains']['secondary'])}
+
+    I often reference blog posts, research papers, and previous discussions to provide clarity. 
+    I balance technical depth with real-world examples and philosophical considerations, maintaining an open stance on uncertainties and trade-offs.
+
+    Reference for Tone and Context:
+    Technical Understanding:
+        {retrieved_context_technical}
+    Related Blogs:
+        {retrieved_context_blog}
+    Temporal Data:
+        {retrieved_context_temporal}
+    """
+
+    conversation_history = [{"role": "system", "content": system_prompt}]
+    conversation_history += [{"role": msg.role, "content": msg.content} for msg in previous_messages]
+    conversation_history.append({"role": "user", "content": request.user_input})
+
+    response = openai.chat.completions.create(
+        model="gpt-4-turbo-preview",
+        messages=conversation_history,
+        temperature=0.7, 
+        stream=True
+    )
+    
+    for chunk in response:
+        if chunk.choices[0].delta.content is not None:
+            yield chunk.choices[0].delta.content
+
+@router.post("/Vitalik")
+async def chat(conversation: VitalikRequest):
+    return StreamingResponse(
+        get_response_Vitalik(conversation),
+        media_type="text/plain"
+    )
+
 app = FastAPI(title="Streaming VitalikAgent Chat API", description="Stream chat responses from VitalikAgent.")
+app.include_router(router)
 
 app.add_middleware(
     CORSMiddleware,
@@ -106,19 +146,5 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Initialize VitalikAgent
-try:
-    agent = VitalikAgent()
-except Exception as e:
-    raise RuntimeError(f"Failed to initialize VitalikAgent: {e}")
-
-@app.post("/stream_chat")
-async def stream_chat(request: ChatRequest):
-    async def event_generator():
-        async for chunk in agent.stream_query(request.user_input, request.previous_messages):
-            yield chunk
-    return StreamingResponse(event_generator(), media_type="text/event-stream")
-
-# TODO: Add persona to exp_
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)
