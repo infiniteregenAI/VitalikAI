@@ -1,4 +1,5 @@
 from fastapi import FastAPI, APIRouter
+from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import StreamingResponse
 import json
 from langchain_openai import OpenAIEmbeddings
@@ -101,7 +102,7 @@ async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
     """
 
     conversation_history = [{"role": "system", "content": system_prompt}]
-    conversation_history += [{"role": msg.role, "content": msg.content} for msg in request.previous_messages]
+    conversation_history += [{"role": msg.role, "content": msg.content} for msg in previous_messages]
     conversation_history.append({"role": "user", "content": request.user_input})
 
     response =  openai.chat.completions.create(
@@ -115,12 +116,20 @@ async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
         if chunk.choices[0].delta.content is not None:
             yield chunk.choices[0].delta.content
 
-@router.post("/Vitalik/")
+@router.post("/Vitalik")
 async def chat(conversation: VitalikRequest):
     return StreamingResponse(
         get_response_Vitalik(conversation),
         media_type="text/plain"
     )
 
-app = FastAPI()
+app = FastAPI(title="Streaming VitalikAgent Chat API", description="Stream chat responses from VitalikAgent.")
 app.include_router(router)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)

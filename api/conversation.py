@@ -98,7 +98,6 @@ class VitalikAgent:
 # Initialize FastAPI app
 app = FastAPI(title="Streaming VitalikAgent Chat API", description="Stream chat responses from VitalikAgent.")
 
-# TODO: Add persona to exp_
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
