@@ -1,5 +1,4 @@
 import json
-import asyncio
 from typing import List, Dict
 import os
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
@@ -8,59 +7,18 @@ from langchain_core.tools import Tool
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
 from langchain.memory import ConversationBufferWindowMemory
 import chromadb
-from api_models import ReasoningLayer
 from api_utils import VitalikUtils
 
 class VitalikAgent:
-    def _format_nested(self, template: str, data_dict: Dict) -> str:
-        """Format string with nested dictionary access"""
-        try:
-            def resolve_key(key_path):
-                """Resolve nested dictionary keys"""
-                parts = key_path.split('.')
-                value = data_dict
-                for part in parts:
-                    if '[' in part:  # Handle array access
-                        array_name, index = part.split('[')
-                        index = int(index.rstrip(']'))
-                        value = value[array_name][index]
-                    else:
-                        value = value[part]
-                return str(value)
-
-            # Replace all placeholders
-            result = template
-            while '{' in result and '}' in result:
-                start = result.find('{')
-                end = result.find('}')
-                if start == -1 or end == -1:
-                    break
-                
-                key = result[start+1:end]
-                try:
-                    value = resolve_key(key)
-                    result = result[:start] + value + result[end+1:]
-                except (KeyError, IndexError) as e:
-                    print(f"Error resolving key {key}: {str(e)}")
-                    result = result[:start] + f"[Error: {key} not found]" + result[end+1:]
-            
-            return result
-
-        except Exception as e:
-            print(f"Error in _format_nested: {str(e)}")
-            print(f"Template: {template}")
-            print(f"Data dict: {data_dict}")
-            return str(e)
-
     def __init__(self, persona_path: str = 'persona.json'):
-        print(f"Current working directory: {os.getcwd()}")
-        print(f"Looking for persona file at: {os.path.abspath(persona_path)}")
+        print(f"\n\tCurrent working directory: {os.getcwd()}")
+        print(f"\n\tLooking for persona file at: {os.path.abspath(persona_path)}")
         
         # Load persona configuration
         try:
             with open(persona_path, 'r', encoding='utf-8') as f:
                 self.persona = json.load(f)
-                print(f"Successfully loaded persona data: {self.persona}")
+                print(f"\n\tSuccessfully loaded persona data: {self.persona}")
                 
                 # Validate required fields
                 required_fields = ['name', 'role', 'system_prompt_template']
@@ -181,12 +139,6 @@ class VitalikAgent:
                 description="Search through my tweets and historical content",
                 func=self._search_temporal_db,
                 coroutine=self._search_temporal_db
-            ),
-            Tool(
-                name="analyze_layers",
-                description="Analyze a topic across multiple dimensions",
-                func=self._layered_analysis,
-                coroutine=self._layered_analysis
             )
         ]
 
@@ -221,55 +173,6 @@ class VitalikAgent:
         except Exception as e:
             print(f"Error in _create_agent: {str(e)}")
             raise
-
-    async def _layered_analysis(self, topic: str) -> List[ReasoningLayer]:
-        """Perform layered analysis of a topic"""
-        layers = []
-
-        try:
-            # Layer 1: Technical Understanding
-            tech_results = await self._search_technical_db(topic)
-            tech_thoughts = await self.utils.synthesize_thoughts(tech_results)  # Await here
-            tech_conclusion = await self.utils.draw_conclusion(tech_results)  # Await here
-            layers.append(ReasoningLayer(
-                name="Technical Analysis",
-                description="Understanding the technical fundamentals",
-                thought_process=tech_thoughts,
-                conclusion=tech_conclusion,
-                confidence=self.utils.calculate_confidence(tech_results),
-                sources=tech_results
-            ))
-
-            # Layer 2: Practical Implementation
-            blog_results = await self._search_blog_db(topic)
-            blog_thoughts = await self.utils.synthesize_thoughts(blog_results)  # Await here
-            blog_conclusion = await self.utils.draw_conclusion(blog_results)  # Await here
-            layers.append(ReasoningLayer(
-                name="Practical Implementation",
-                description="Real-world applications and considerations",
-                thought_process=blog_thoughts,
-                conclusion=blog_conclusion,
-                confidence=self.utils.calculate_confidence(blog_results),
-                sources=blog_results
-            ))
-
-            # Layer 3: Evolution and Context
-            temporal_results = await self._search_temporal_db(topic)
-            temporal_thoughts = await self.utils.synthesize_thoughts(temporal_results)  # Await here
-            temporal_conclusion = await self.utils.draw_conclusion(temporal_results)  # Await here
-            layers.append(ReasoningLayer(
-                name="Temporal Context",
-                description="How thinking on this topic has evolved",
-                thought_process=temporal_thoughts,
-                conclusion=temporal_conclusion,
-                confidence=self.utils.calculate_confidence(temporal_results),
-                sources=temporal_results
-            ))
-
-            return layers
-        except Exception as e:
-            print(f"Error in layered analysis: {str(e)}")
-            return []
 
     async def query(self, user_input: str) -> Dict:
         """Process a user query through the agent"""
