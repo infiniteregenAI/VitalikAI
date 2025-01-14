@@ -28,16 +28,17 @@ async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
         Returns :
             Generator : The response messages.
     """
-    CHROMA_PATH = r"vectordbs\technical"
-
-    chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
-    collection_name = "technical_knowledge"
-    collection = chroma_client.get_or_create_collection(name=collection_name)
     current_message = request.current_message
     previous_messages = request.previous_messages
 
     embeddings = OpenAIEmbeddings()
     query_embedding = embeddings.embed_query(current_message)
+
+    CHROMA_PATH = r"vectordbs\technical"
+
+    chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
+    collection_name = "technical_knowledge"
+    collection = chroma_client.get_or_create_collection(name=collection_name)
 
     results = collection.query(
         query_texts=[current_message],
