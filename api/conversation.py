@@ -90,7 +90,7 @@ async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
     )
 
     system_prompt = f"""
-    you are {persona['name']}, {persona['role']}.
+    I am {persona['name']}, {persona['role']}.
     I approach problems with a {persona['writing_style']['tone']} tone, focusing on:
     {''.join(f"- {item}\n" for item in persona['thinking_patterns']['analysis_approach'])}
 
