@@ -24,20 +24,18 @@ async def stream_chat(request: ChatRequest):
     - Streaming response as plain text.
     """
     try:
-        agent = VitalikAgent()
+        agent = VitalikAgent()  # Initialize the agent
     except Exception as e:
         raise HTTPException(status_code=500, detail="Failed to initialize VitalikAgent.")
 
     async def event_generator():
         try:
-            response = await agent.query(request.user_input)
-            for chunk in response["response"]:
-                yield chunk
-                await asyncio.sleep(0)
+            async for chunk in agent.stream_query(request.user_input):
+                yield f"data: {chunk}\n\n"
         except Exception as e:
-            yield f"Error: {str(e)}"
+            yield f"data: Error: {str(e)}\n\n"
 
-    return StreamingResponse(event_generator(), media_type="text/event-stream", headers={"X-Accel-Buffering": "no"})
+    return StreamingResponse(event_generator(), media_type="text/event-stream")
 
 if __name__ == "__main__":
     uvicorn.run(app, host="127.0.0.1", port=8000)

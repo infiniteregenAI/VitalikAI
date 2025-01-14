@@ -195,4 +195,15 @@ class VitalikAgent:
                 "error": str(e),
                 "status": "failed"
             }
-        
+
+    async def stream_query(self, user_input: str):
+        """Stream the agent's response chunk by chunk."""
+        try:
+            agent_response = await self.agent.ainvoke({"input": user_input})
+            if hasattr(agent_response, "stream"):
+                async for chunk in agent_response.stream():
+                    yield chunk  # Yield each chunk as it's received
+            else:
+                yield agent_response.get("output", "No output available")
+        except Exception as e:
+            yield f"Error: {str(e)}"        
