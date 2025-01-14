@@ -20,3 +20,5 @@ uvicorn
 tweepy
 python-dotenv
 PyPDF2
+aiofiles
+asyncio
