@@ -3,6 +3,7 @@ from fastapi.responses import StreamingResponse
 from fastapi import BackgroundTasks
 import traceback
 import json
+from langchain_openai import OpenAIEmbeddings
 import os
 import aiofiles
 import asyncio
@@ -28,22 +29,20 @@ async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
             Generator : The response messages.
     """
     CHROMA_PATH = r"vectordbs\technical"
-    # CHROMA_PATH = r"vectordbs\Vitalik_db"
-
-    if not os.path.exists(CHROMA_PATH):
-        os.makedirs(CHROMA_PATH)
-    os.chmod(CHROMA_PATH, 0o777)
 
     chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
     collection_name = "technical_knowledge"
-    # collection_name = "ai_persona"
     collection = chroma_client.get_or_create_collection(name=collection_name)
     current_message = request.current_message
     previous_messages = request.previous_messages
 
+    embeddings = OpenAIEmbeddings()
+    query_embedding = embeddings.embed_query(current_message)
+
     results = collection.query(
         query_texts=[current_message],
-        n_results=4
+        query_embeddings=[query_embedding],
+        n_results=3
     )
     
     retrieved_context = results["documents"][0] if results["documents"] else (
@@ -86,6 +85,5 @@ async def chat(conversation: VitalikRequest):
         media_type="text/plain"
     )
 
-# Create the FastAPI app and include the router
 app = FastAPI()
 app.include_router(router)
