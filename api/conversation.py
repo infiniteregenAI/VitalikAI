@@ -12,16 +12,6 @@ class ChatRequest(BaseModel):
 # Initialize FastAPI app
 app = FastAPI(title="Streaming VitalikAgent Chat API", description="Stream chat responses from VitalikAgent.")
 
-# Initialize the VitalikAgent instance
-@app.on_event("startup")
-async def initialize_agent():
-    global agent
-    try:
-        agent = VitalikAgent()
-    except Exception as e:
-        print(f"Failed to initialize VitalikAgent: {str(e)}")
-        raise RuntimeError("VitalikAgent initialization failed.")
-
 @app.post("/stream_chat")
 async def stream_chat(request: ChatRequest):
     """
@@ -33,6 +23,11 @@ async def stream_chat(request: ChatRequest):
     Returns:
     - Streaming response as plain text.
     """
+    try:
+        agent = VitalikAgent()
+    except Exception as e:
+        print(f"Failed to initialize VitalikAgent: {str(e)}")
+        raise RuntimeError("VitalikAgent initialization failed.")
     try:
         async def event_generator():
             try:
