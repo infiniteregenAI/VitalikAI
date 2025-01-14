@@ -11,21 +11,25 @@ import chromadb
 
 router = APIRouter()
 
+class ChatMessage(BaseModel):
+    role: str  # "human", or "assistant"
+    content: str
+
 class VitalikRequest(BaseModel):
-    current_message: str
-    previous_messages: list[str]
+    user_input: str
+    previous_messages: list[ChatMessage] = []
 
 async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
     """ 
         This method gets the response from the agent.
         
         Args :
-            messages (List[Dict[str, str]]) : The conversation messages.    
+            request (VitalikRequest): The user input and previous conversation history.    
             
         Returns :
-            Generator : The response messages.
+            Generator: The response messages.
     """
-    current_message = request.current_message
+    current_message = request.user_input
     previous_messages = request.previous_messages
 
     embeddings = OpenAIEmbeddings()
@@ -97,8 +101,8 @@ async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
     """
 
     conversation_history = [{"role": "system", "content": system_prompt}]
-    conversation_history += [{"role": "user", "content": msg} for msg in previous_messages]
-    conversation_history.append({"role": "user", "content": current_message})
+    conversation_history += [{"role": msg.role, "content": msg.content} for msg in request.previous_messages]
+    conversation_history.append({"role": "user", "content": request.user_input})
 
     response =  openai.chat.completions.create(
         model="gpt-4-turbo-preview",
