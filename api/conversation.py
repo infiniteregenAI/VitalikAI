@@ -22,13 +22,13 @@ class ChatRequest(BaseModel):
 
 # VitalikAgent with minimal functionality
 class VitalikAgent:
+    # TODO: Add persona to exp_
     def __init__(self, persona_path: str = "persona.json"):
         try:
             with open(persona_path, "r", encoding="utf-8") as f:
                 self.persona = json.load(f)
 
             self.llm = ChatOpenAI(
-                # TODO: shift to `gpt-4-turbo-preview` later
                 model="gpt-4o-mini", 
                 temperature=0.7, 
                 stream=True
@@ -98,6 +98,7 @@ class VitalikAgent:
 # Initialize FastAPI app
 app = FastAPI(title="Streaming VitalikAgent Chat API", description="Stream chat responses from VitalikAgent.")
 
+# TODO: Add persona to exp_
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -119,5 +120,6 @@ async def stream_chat(request: ChatRequest):
             yield chunk
     return StreamingResponse(event_generator(), media_type="text/event-stream")
 
+# TODO: Add persona to exp_
 if __name__ == "__main__":
     uvicorn.run(app, host="0.0.0.0", port=8000)

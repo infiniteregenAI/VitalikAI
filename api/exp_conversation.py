@@ -1,10 +1,7 @@
-from fastapi import FastAPI, APIRouter, HTTPException
+from fastapi import FastAPI, APIRouter
 from fastapi.responses import StreamingResponse
-from fastapi import BackgroundTasks
-import traceback
 import json
 from langchain_openai import OpenAIEmbeddings
-import os
 import aiofiles
 import asyncio
 from pydantic import BaseModel
@@ -34,19 +31,49 @@ async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
     embeddings = OpenAIEmbeddings()
     query_embedding = embeddings.embed_query(current_message)
 
-    CHROMA_PATH = r"vectordbs\technical"
+    CHROMA_PATH_technical = r"vectordbs\technical"
 
-    chroma_client = chromadb.PersistentClient(path=CHROMA_PATH)
-    collection_name = "technical_knowledge"
-    collection = chroma_client.get_or_create_collection(name=collection_name)
+    chroma_client_technical = chromadb.PersistentClient(path=CHROMA_PATH_technical)
+    collection_technical_name = "technical_knowledge"
+    collection_technical = chroma_client_technical.get_or_create_collection(name=collection_technical_name)
 
-    results = collection.query(
+    results_technical = collection_technical.query(
         query_texts=[current_message],
         query_embeddings=[query_embedding],
         n_results=3
     )
     
-    retrieved_context = results["documents"][0] if results["documents"] else (
+    retrieved_context_technical = results_technical["documents"][0] if results_technical["documents"] else (
+        "This isn't something I have a solid answer for at the moment, but it's a fascinating question that might require more exploration or context."
+    )
+
+    CHROMA_PATH_blog = r"vectordbs\blog"
+    chroma_client_blog = chromadb.PersistentClient(path=CHROMA_PATH_blog)
+    collection_blog_name = "blog"
+    collection_blog = chroma_client_blog.get_or_create_collection(name=collection_blog_name)
+
+    results_blog = collection_blog.query(
+        query_texts=[current_message],
+        query_embeddings=[query_embedding],
+        n_results=3
+    )
+
+    retrieved_context_blog = results_blog["documents"][0] if results_blog["documents"] else (
+        "This isn't something I have a solid answer for at the moment, but it's a fascinating question that might require more exploration or context."
+    )
+
+    CHROMA_PATH_temporal = r"vectordbs\temporal"
+    chroma_client_temporal = chromadb.PersistentClient(path=CHROMA_PATH_temporal)
+    collection_temporal_name = "temporal"
+    collection_temporal = chroma_client_temporal.get_or_create_collection(name=collection_temporal_name)
+
+    results_temporal = collection_temporal.query(
+        query_texts=[current_message],
+        query_embeddings=[query_embedding],
+        n_results=3
+    )
+
+    retrieved_context_temporal = results_temporal["documents"][0] if results_temporal["documents"] else (
         "This isn't something I have a solid answer for at the moment, but it's a fascinating question that might require more exploration or context."
     )
 
@@ -60,18 +87,23 @@ async def get_response_Vitalik(request: VitalikRequest) -> AsyncGenerator:
     4. **Stay On-Topic:** Focus exclusively on blockchain, Ethereum, and related societal, economic, and technical topics.
     5. **Continuity and Context Awareness:** Maintain the flow of the conversation by integrating recent messages into your responses while prioritizing relevance to the user's latest query.
 
-    # Reference for Tone and context: 
-    {retrieved_context}"""
+    # Reference for Tone and context:
+    Technical Understanding:
+        {retrieved_context_technical}
+    Related Blogs:
+        {retrieved_context_blog}
+    Temporal Data:
+        {retrieved_context_temporal}
+    """
 
     conversation_history = [{"role": "system", "content": system_prompt}]
     conversation_history += [{"role": "user", "content": msg} for msg in previous_messages]
     conversation_history.append({"role": "user", "content": current_message})
 
     response =  openai.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-4-turbo-preview",
         messages=conversation_history,
-        temperature=0.9,
-        max_tokens=800,
+        temperature=0.7, 
         stream=True
     )
     
