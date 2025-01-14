@@ -286,21 +286,8 @@ class VitalikAgent:
                 response_output = agent_response['output']
             else:
                 response_output = "Unexpected response format."
-
-            # Perform layered analysis
-            analysis = await self._layered_analysis(user_input)
             
-            return {
-                "response": response_output,
-                "context": {
-                    "analysis": analysis,
-                    "sources": {
-                        "technical": await self._search_technical_db(user_input),
-                        "blog": await self._search_blog_db(user_input),
-                        "temporal": await self._search_temporal_db(user_input)
-                    }
-                }
-            }
+            return {"response": response_output}
         except Exception as e:
             print(f"Error during query processing: {str(e)}")
             return {
