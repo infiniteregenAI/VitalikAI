@@ -16,10 +16,9 @@ beautifulsoup4
 fastapi
 uvicorn
 
-# NLP and embeddings
 tweepy
 python-dotenv
 PyPDF2
 aiofiles
 asyncio
-chainlit
+chainlit==0.7.3
