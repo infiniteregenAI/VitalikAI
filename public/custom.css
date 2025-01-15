@@ -1,0 +1,17 @@
+.watermark {
+    display: none !important;
+  }
+  
+  a[href*='https://github.com/Chainlit/chainlit'] {
+      visibility: hidden !important;
+  }
+  
+  .watermark a p, 
+  .watermark a svg { 
+      display: none !important; 
+  }
+  
+  /* This targets both the logo and text */
+  .MuiStack-root.watermark {
+      display: none !important;
+  }
