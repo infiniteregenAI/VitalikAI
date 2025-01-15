@@ -21,4 +21,4 @@ python-dotenv
 PyPDF2
 aiofiles
 asyncio
-chainlit==0.7.3
+chainlit

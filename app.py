@@ -358,16 +358,39 @@ async def on_chat_start():
         cl.user_session.set("agent", agent)
         print("Agent initialized successfully!")
         
-        # Send welcome message
-        await cl.Message(
-            content=f"Hello! I am {agent.persona['name']}, {agent.persona['role']}. How can I help you today?",
-            author="vitalikAI"
-        ).send()
         
     except Exception as e:
         error_msg = f"Error initializing agent: {str(e)}"
         print(error_msg)
         await cl.Message(content=error_msg, author="vitalikAI").send()
+
+
+import chainlit as cl
+
+@cl.set_starters
+async def set_starters():
+    return [
+        cl.Starter(
+            label="Ethereum Scaling",
+            message="What are your thoughts on the current state of Ethereum scaling solutions, particularly Layer 2 solutions and their impact on the ecosystem?",
+            icon="/public/logo_dark.png",
+        ),
+        cl.Starter(
+            label="Proof of Stake vs Proof of Work",
+            message="Can you explain the key differences between Proof of Stake and Proof of Work consensus mechanisms, and why Ethereum transitioned to PoS?",
+            icon="/public/logo_dark.png",
+        ),
+        cl.Starter(
+            label="Future of Blockchain",
+            message="What's your vision for the future of blockchain technology and its potential impact on society beyond just financial applications?",
+            icon="/public/logo_dark.png",
+        ),
+        cl.Starter(
+            label="Cryptoeconomics",
+            message="Could you explain the fundamental principles of cryptoeconomics and how they apply to blockchain system design?",
+            icon="/public/logo_dark.png",
+        )
+    ]
 
 @cl.on_message
 async def on_message(message: cl.Message):
@@ -384,7 +407,7 @@ async def on_message(message: cl.Message):
         conversational_prompt = f"""Determine if this is a conversational message that doesn't require technical knowledge:
         Message: {message.content}
         
-        If this is a simple greeting, personal question, or general conversation that doesn't require technical knowledge,
+        If this is a simple greeting, personal question, a general question like 'who made you'S or general conversation that doesn't require technical knowledge,
         return CONVERSATIONAL. Otherwise, return NEEDS_KNOWLEDGE.
         
         Just return one word: CONVERSATIONAL or NEEDS_KNOWLEDGE."""
