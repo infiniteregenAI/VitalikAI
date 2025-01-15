@@ -404,74 +404,74 @@ async def on_message(message: cl.Message):
     
     try:
         # First, check if this is a conversational query that doesn't need knowledge base access
-        conversational_prompt = f"""Determine if this is a conversational message that doesn't require technical knowledge:
-        Message: {message.content}
+        conversational_prompt = """Determine if this is a conversational message that doesn't require technical knowledge:
+        Message: {message}
         
-        If this is a simple greeting, personal question, a general question like 'who made you'S or general conversation that doesn't require technical knowledge,
+        If this is a simple greeting, personal question, a general question like 'who made you' or general conversation that doesn't require technical knowledge,
         return CONVERSATIONAL. Otherwise, return NEEDS_KNOWLEDGE.
         
         Just return one word: CONVERSATIONAL or NEEDS_KNOWLEDGE."""
 
         # Get classification of message type
         classification_response = await agent.llm.ainvoke(
-            [HumanMessage(content=conversational_prompt)]
+            [HumanMessage(content=conversational_prompt.format(message=message.content))]
         )
         is_conversational = "CONVERSATIONAL" in classification_response.content.upper()
 
         if is_conversational:
             # Handle conversational queries with a simpler prompt
-            conversation_prompt = f"""As {agent.persona['name']}, {agent.persona['role']}, respond naturally to this conversational message:
+            conversation_prompt = """As {name}, respond naturally to this message while maintaining my characteristic analytical style and warmth:
 
-            Message: {message.content}
-
-            Remember:
-            1. Be warm and engaging while maintaining my characteristic analytical style
-            2. Keep responses concise for simple queries
-            3. Stay true to my personality but don't overanalyze simple exchanges"""
+            Message: {message}"""
 
             stream_handler = StreamingCallbackHandler(msg)
             response = await agent.agent.ainvoke(
-                {"input": conversation_prompt},
+                {"input": conversation_prompt.format(name=agent.persona['name'], message=message.content)},
                 config={"callbacks": [stream_handler]}
             )
 
         else:
             # For technical/knowledge-based queries, use the full context gathering
-            # Gather context from knowledge bases
             technical_context = await agent._search_technical_db(message.content)
             blog_context = await agent._search_blog_db(message.content)
             temporal_context = await agent._search_temporal_db(message.content)
             
-            # Craft prompt using persona and gathered context
-            technical_prompt = f"""As {agent.persona['name']}, {agent.persona['role']}, analyze this question using my characteristic approach:
+            # Craft prompt that encourages natural responses while maintaining analytical depth
+            technical_prompt = """You are {name}, {role}. You have been asked: {message}
 
-            Technical Knowledge:
-            {format_context(technical_context)}
+            Consider this context from your knowledge base:
 
-            Blog Perspectives:
-            {format_context(blog_context)}
+            Technical Research:
+            {technical}
 
-            Historical Context:
-            {format_context(temporal_context)}
+            Past Writings:
+            {blog}
 
-            Question: {message.content}
+            Historical Perspective:
+            {temporal}
 
-            Respond in my distinctive style:
-            1. Start with first principles thinking
-            2. Consider technical, economic, and social implications
-            3. Reference relevant research and past writings when applicable
-            4. Maintain philosophical and analytical depth
-            5. Use clear, precise language with technical accuracy
-            6. Include mathematical or formal logic when relevant
-            7. Address potential counterarguments
-            8. Consider long-term implications
+            Important: Respond naturally as Vitalik Buterin. While your analysis should be grounded in first principles and consider technical, economic, and social implications, avoid explicitly stating your thought process or using headers. Instead, weave these considerations into a cohesive, conversational response that maintains your characteristic analytical depth and precision.
+
+            Focus on providing clear insights while naturally incorporating:
+            - Technical accuracy and mathematical precision when relevant
+            - References to research and past writings where applicable
+            - Balanced consideration of counterarguments
+            - Long-term implications
             
-            Do this thinking internally to respond. The final reponse should not be generated by taking this as a template. This is just the thinking pattern guide not an answer template.
-            """
+            Remember: This is guidance for your internal thought process. Your response should flow naturally without revealing this analytical framework."""
 
             stream_handler = StreamingCallbackHandler(msg)
             response = await agent.agent.ainvoke(
-                {"input": technical_prompt},
+                {
+                    "input": technical_prompt.format(
+                        name=agent.persona['name'],
+                        role=agent.persona['role'],
+                        message=message.content,
+                        technical=format_context(technical_context),
+                        blog=format_context(blog_context),
+                        temporal=format_context(temporal_context)
+                    )
+                },
                 config={"callbacks": [stream_handler]}
             )
 
